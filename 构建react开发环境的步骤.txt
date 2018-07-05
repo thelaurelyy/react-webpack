@@ -1,0 +1,67 @@
+
+
+构建react 的开发环境
+
+（1）mkdir react-webpack
+
+（2）npm init -y         -y 认同所有默认项，不用再输入内容
+
+（3）npm install --save-dev webpack
+     npm install --save-dev webpack-cli
+	 
+	 
+（4）新建 webpack.config.js 文件 
+
+		const path = require('path');
+		module.exports = {
+			entry: './app/index.js',
+			output: {
+				filename: 'index.js',
+				path: path.resolve(__dirname, 'dist')
+			},
+			devServer: {
+				contentBase: './',
+				host: "localhost",
+				port: "1717",
+				compress: true
+			}
+		}
+		
+（5）编辑入口文件  index.js
+     编辑出口文件  dist文件夹
+	 
+	 
+（6）编辑文件 index.html   引入出口文件路径<script src="./dist/index.js"></script>
+	
+	
+（7）在package.json 中编辑脚本 build -> webpack
+	
+	 
+（8）配置服务器：
+		npm install --save-dev webpack-dev-server
+		
+	 配置webpack.config.js 中的 devServer（见第二步文本）
+	 
+	 在package.json 中编辑脚本 server -> webpack-dev-server --open
+	
+	
+（9）设置publicPat指向内存
+	 在index.html中修改入出口文件的引用地址     <script src="./temp/index.js"></script>
+	 那么在代码更新后，界面可自动更新实时预览
+
+		const path = require('path');
+		module.exports = {
+			entry: './app/index.js',
+			output: {
+				filename: 'index.js',
+				path: path.resolve(__dirname, 'dist'),
+				publicPath: 'temp/'
+			},
+			devServer: {
+				contentBase: './',
+				host: "localhost",
+				port: "1717",
+				compress: true
+			}
+		}
+	
