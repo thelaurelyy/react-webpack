@@ -5,7 +5,7 @@
 （1）mkdir react-webpack
 
 （2）cd react-webpack
-	 npm init -y         -y 认同所有默认项，不用再输入内容
+     npm init -y         -y 认同所有默认项，不用再输入内容
 
 （3）npm install --save-dev webpack
      npm install --save-dev webpack-cli
