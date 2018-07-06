@@ -11,5 +11,19 @@ module.exports = {
         host: "localhost",
         port: "1717",
         compress: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(jsx|js)$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['env', 'react']
+                    }
+                },
+                exclude: /node_modules/
+            }
+        ]
     }
 }
