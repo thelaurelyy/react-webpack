@@ -1,6 +1,8 @@
 
 
-构建react 的开发环境
+
+在学习完webpack课程后，跟着教程动手构建react 的开发环境
+
 
 （1）mkdir react-webpack
 
@@ -100,6 +102,8 @@
 		}
 		
 （11）npm install --save react react-dom
+
+    编写react 小样
 	
 
 
